@@ -1,0 +1,10 @@
+# This file contains the required packages and their versions for an R project.
+# The file uses the separate lines for each package and version that is required.
+# These packages are necessary for the code in the project to run successfully.
+httr:1.4.7
+jsonlite:1.8.7
+ggplot2:3.4.4
+tidyverse:2.0.0
+data.table:1.14.8
+lubridate:1.9.3
+readxl:1.4.3

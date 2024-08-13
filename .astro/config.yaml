@@ -1,2 +1,3 @@
 project:
-  name: registry-dag-template
+  name: example_run_R_script_dag
+

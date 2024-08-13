@@ -1,0 +1,4 @@
+# This file contains the list of Python packages and their versions required for the project.
+# The file uses the separate lines for each package and the following format package_name==version_number.
+# These packages are specified in the pip-requirements format.
+pycurl==7.45.3
