@@ -21,13 +21,6 @@ dag = DAG(
 )
 
 # Define the tasks:
-AA_get_users = BashOperator(
-    task_id='AA_find_A_tas.R',
-    bash_command=f'{cwd} find / --name A_task.R ',
-    dag=dag,
-    )
-
-
 A_get_users = BashOperator(
     task_id='A_get_users',
     bash_command=f'{cwd}run_r.sh {cwd}A_task.R ',
