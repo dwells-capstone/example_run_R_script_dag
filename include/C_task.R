@@ -1,7 +1,7 @@
 library(ggplot2)
 
 # Load data
-data <- read.csv("/example_run_R_script_dag/include/users.csv", header=TRUE)
+data <- read.csv("/usr/local/airflow/files/users.csv", header=TRUE)
 
 # Barplot
 p <- ggplot(data, aes(x = as.factor(dob.age))) +
@@ -9,6 +9,6 @@ p <- ggplot(data, aes(x = as.factor(dob.age))) +
   labs(x = "Age",
        y = "Count")
 
-png("/example_run_R_script_dag/include/counts_by_age.png", width = 800, height = 400)
+png("/usr/local/airflow/files/counts_by_age.png", width = 800, height = 400)
 print(p)
 dev.off()
