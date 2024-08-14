@@ -1,7 +1,7 @@
 library(ggplot2)
 
 # Load data
-data <- read.csv("/opt/airflow/include/users.csv", header=TRUE)
+data <- read.csv("/example_run_R_script_dag/include/users.csv", header=TRUE)
 
 # Barplot
 p <- ggplot(data, aes(x = as.factor(gender), fill = gender)) +
