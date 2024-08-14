@@ -8,5 +8,6 @@ res = GET(
     inc="gender,name,dob"
    )
 )
+
 data = fromJSON(content(res, "text"))
-write.csv(data$results,"users.csv", row.names = FALSE)
+write.csv(data$results,"/usr/local/airflow/files/users.csv", row.names = FALSE)
