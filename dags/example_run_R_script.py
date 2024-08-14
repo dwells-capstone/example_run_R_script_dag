@@ -3,6 +3,16 @@ import os
 from airflow.models import DAG
 from airflow.operators.bash import BashOperator
 
+"""
+    This script defines a DAG (Directed Acyclic Graph) for running R scripts using Airflow.
+    It consists of three tasks:
+    - A_get_users: Runs the R script A_task.R
+    - B_user_counts_by_gender: Runs the R script B_task.R
+    - C_user_counts_by_age: Runs the R script C_task.R
+    
+    The tasks are executed in the order specified by the task dependencies.
+"""
+
 # Get current directory
 cwd = os.getcwd()
 cwd = cwd + '/include/'
@@ -42,14 +52,3 @@ C_user_counts_by_age = BashOperator(
 # Define the task dependencies
 A_get_users >> B_user_counts_by_gender
 A_get_users >> C_user_counts_by_age
-def example_run_R_script():
-    """
-    This script defines a DAG (Directed Acyclic Graph) for running R scripts using Airflow.
-    It consists of three tasks:
-    - A_get_users: Runs the R script A_task.R
-    - B_user_counts_by_gender: Runs the R script B_task.R
-    - C_user_counts_by_age: Runs the R script C_task.R
-    
-    The tasks are executed in the order specified by the task dependencies.
-    """
-    pass
