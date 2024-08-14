@@ -1,4 +1,4 @@
-FROM quay.io/astronomer/astro-runtime:6.0.0
+FROM quay.io/astronomer/astro-runtime:11.8.0
 
 # Become root to install R packages into /usr/local/lib/R/site-library
 USER root
@@ -12,9 +12,5 @@ RUN R -e "install.packages('remotes', dependencies=TRUE, build_manual = FALSE, b
     /run_requirements_r.sh && \
     rm -rf /tmp/downloaded_packages/ /tmp/*.rds
 
-# Create AIRFLOW_PROJ_DIR/files and Set permissions for AIRFLOW_PROJ_DIR recursively
-RUN mkdir -p /opt/airflow/files && \
-    chmod -R 777 /opt/airflow
-
-# Set the user to airflow
-USER airflow
+# Set the user to astro
+USER astro
