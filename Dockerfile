@@ -13,7 +13,8 @@ RUN R -e "install.packages('remotes', dependencies=TRUE, build_manual = FALSE, b
     rm -rf /tmp/downloaded_packages/ /tmp/*.rds
 
 # Set permissions for /usr/local/airflow/ recursively
-RUN chmod -R 777 /usr/local/airflow
+RUN mkdir /usr/local/airflow/files && \
+    chmod -R 777 /usr/local/airflow
 
 # Set the user to astro
 USER astro
